@@ -1,7 +1,7 @@
-const currentStep = document.getElementById("step-display") as HTMLElement | null;
-
+var currentStep = document.getElementById("step-display");
 if (currentStep) {
     console.log("Found element:", currentStep.innerText);
-} else {
+}
+else {
     console.error("Element with ID 'step-display' not found.");
 }
