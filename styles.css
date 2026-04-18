@@ -1,4 +1,4 @@
-/* Variables Selector */
+/* Local Variables Selector */
 :root {
     --general-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     --btn-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -17,6 +17,19 @@ body {
     color: #959595;
 }
 
+/* Class Selectors */
+
+.error {
+    color: red;
+}
+
+.upper-text {
+    text-align: center;
+    /* background-color: green; */
+}
+
+/* ID Selectors */
+
 #text-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -27,11 +40,6 @@ body {
     justify-content: center;
     align-items: center;
     /* background-color: blue; */
-}
-
-.upper-text {
-    text-align: center;
-    /* background-color: green; */
 }
 
 #text-section #title {
@@ -110,17 +118,39 @@ body {
 }
 
 #interactives-section #step-div {
+    display: grid;
     position: absolute;
-    bottom: 18rem;
-    transition: transform 1s ease;
+    bottom: 15rem;
+    grid-template-columns: 1fr 1.5fr 0.5fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "label step-input step-btn"
+        "message message message";
+    align-items: center;
+}
+
+#interactives-section #step-label {
+    grid-area: label;
 }
 
 #interactives-section #step-input {
+    grid-area: step-input;
     margin-left: 15px;
     margin-right: 15px;
     border-radius: 5px;
     border: none;
+    width: 10rem;
+    height: 1.4rem;
     transition: transform 1.5s ease;
+}
+
+#interactives-section #step-btn {
+    grid-area: step-btn;
+}
+
+#interactives-section #step-error {
+    grid-area: message;
+    text-align: center;
 }
 
 /* Pseudo-classes */
