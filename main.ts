@@ -1,7 +1,19 @@
-const currentStep = document.getElementById("step-display") as HTMLElement | null;
+// Counter and Step displays:
+const currentStepHTML: HTMLElement = document.getElementById("step-display") as HTMLElement;
+const currentStepValue: string = currentStepHTML.textContent;
 
-if (currentStep) {
-    console.log("Found element:", currentStep.innerText);
-} else {
-    console.error("Element with ID 'step-display' not found.");
-}
+const currentCountHTML: HTMLElement = document.getElementById("count-display") as HTMLElement;
+const currentCountValue: string = currentCountHTML.textContent;
+
+// Interactives:
+const incrementButton: HTMLElement = document.getElementById("increment-btn") as HTMLElement;
+const decrementButton: HTMLElement = document.getElementById("decrement-btn") as HTMLElement;
+const resetButton: HTMLElement = document.getElementById("reset-btn") as HTMLElement;
+const stepButton: HTMLElement = document.getElementById("step-btn") as HTMLElement;
+
+const stepInput: HTMLElement = document.getElementById("step-input") as HTMLElement;
+
+// Event Listeners:
+
+
+// Methods:
