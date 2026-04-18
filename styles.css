@@ -1,5 +1,6 @@
 :root {
     --general-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    --btn-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --title-font-size: 2.7rem;
     --subtitle-font-size: 1.7rem;
     --trackables-font-size: 1.5rem;
@@ -14,12 +15,12 @@ body {
 
 #text-section {
     display: grid;
-    grid-template-columns: 4fr 1fr 3fr 0.5fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     grid-template-areas:
-        "title title title title"
-        "count count-display step step-display";
-    justify-content: center;
+        "title title"
+        "count step";
+    justify-content: start;
     align-items: center;
     /* background-color: blue; */
 }
@@ -41,9 +42,10 @@ body {
 
 #text-section #count-display {
     position: relative;
-    grid-area: count-display;
+    grid-area: count;
     font-size: var(--trackables-font-size);
-    right: 4rem;
+    font-weight: bold;
+    left: 8rem;
 }
 
 #text-section #step-declaration {
@@ -52,9 +54,11 @@ body {
 }
 
 #text-section #step-display {
-    grid-area: step-display;
+    position: relative;
+    grid-area: step;
     font-size: var(--trackables-font-size);
-    padding-right: 4rem;
+    font-weight: bold;
+    left: 8rem;
 }
 
 #interactives-section {
@@ -71,22 +75,35 @@ body {
     border: none;
     border-radius: 10px;
     padding: 6px 16px;
-    font-family: var(--general-font);
+    font-family: var(--btn-font);
     font-weight: bold;
     cursor: pointer;
 }
 
-#interactives-section #increment-btn { background-color: green; }
+#interactives-section #increment-btn {
+    background-color: green;
+    transition: transform 1s ease;
+}
 
-#interactives-section #decrement-btn { background-color: red; }
+#interactives-section #decrement-btn {
+    background-color: red;
+    transition: transform 1s ease;
+}
 
-#interactives-section #step-btn { background-color: rgb(58, 58, 255); }
+#interactives-section #step-btn {
+    background-color: rgb(58, 58, 255);
+    transition: transform 1s ease;
+}
 
-#interactives-section #reset-btn { background-color: rgb(186, 186, 186) }
+#interactives-section #reset-btn {
+    background-color: rgb(186, 186, 186);
+    transition: transform 1s ease;
+}
 
 #interactives-section #step-div {
     position: absolute;
     bottom: 22rem;
+    transition: transform 1s ease;
 }
 
 #interactives-section #step-input {
@@ -94,8 +111,37 @@ body {
     margin-right: 15px;
     border-radius: 5px;
     border: none;
+    transition: transform 1.5s ease;
 }
 
-#interactives-section #step-input:active {
-    border: none;
+#interactives-section #increment-btn:hover {
+    background-color: rgb(0, 100, 0);
+    transform: scale(1.07);
 }
+
+#interactives-section #decrement-btn:hover {
+    background-color: rgb(200, 0, 0);
+    transform: scale(1.07);
+}
+
+#interactives-section #reset-btn:hover {
+    background-color: rgba(230, 230, 230, 0.6);
+    transform: scale(1.07);
+}
+
+#interactives-section #step-btn:hover {
+    background-color: rgb(0, 0, 200);
+    transform: scale(1.07);
+}
+
+#interactives-section #step-input::placeholder {
+    padding-left: 5px;
+    font-family: var(--btn-font);
+    color: rgba(0, 0, 0, 0.45);
+}
+
+#interactives-section #step-input:focus {
+    outline: none;
+    transform: scale(1.07);
+}
+
