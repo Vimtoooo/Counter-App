@@ -69,21 +69,42 @@ body {
 }
 
 #text-section #step-display {
-    position: relative;
     grid-area: step;
     font-size: var(--trackables-font-size);
     font-weight: bold;
-    left: 8rem;
+    margin-left: 14.3rem;
+}
+
+#interactives-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    /* background-color: white; */
 }
 
 #interactives-section {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "increment decrement reset"
+        "label step-input step-btn"
+        "message message message";
     justify-content: center;
     align-items: center;
+    width: 50%;
+    height: 20%;
     margin-top: 5rem;
     gap: 2rem;
     /* background-color: yellow; */
+}
+
+#interactives-section * {
+    position: relative;
+    left: 2vw;
 }
 
 #interactives-section .btn {
@@ -94,39 +115,27 @@ body {
     font-weight: bold;
     color: var(--btn-font-color);
     cursor: pointer;
+    width: 10rem;
+    height: 2rem;
     transition: color 0.7s ease, font-size 0.7s ease;
 }
 
 #interactives-section #increment-btn {
+    grid-area: increment;
     background-color: green;
     transition: transform 1s ease;
 }
 
 #interactives-section #decrement-btn {
+    grid-area: decrement;
     background-color: red;
     transition: transform 1s ease;
 }
 
-#interactives-section #step-btn {
-    background-color: rgb(58, 58, 255);
-    transition: transform 1s ease;
-}
-
 #interactives-section #reset-btn {
+    grid-area: reset;
     background-color: rgb(186, 186, 186);
     transition: transform 1s ease;
-}
-
-#interactives-section #step-div {
-    display: grid;
-    position: absolute;
-    bottom: 15rem;
-    grid-template-columns: 1fr 1.5fr 0.5fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-        "label step-input step-btn"
-        "message message message";
-    align-items: center;
 }
 
 #interactives-section #step-label {
@@ -135,8 +144,6 @@ body {
 
 #interactives-section #step-input {
     grid-area: step-input;
-    margin-left: 15px;
-    margin-right: 15px;
     border-radius: 5px;
     border: none;
     width: 10rem;
@@ -146,6 +153,8 @@ body {
 
 #interactives-section #step-btn {
     grid-area: step-btn;
+    background-color: rgb(58, 58, 255);
+    transition: transform 1s ease;
 }
 
 #interactives-section #step-error {
