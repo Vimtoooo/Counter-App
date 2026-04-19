@@ -102,11 +102,6 @@ body {
     /* background-color: yellow; */
 }
 
-#interactives-section * {
-    position: relative;
-    left: 2vw;
-}
-
 #interactives-section .btn {
     border: none;
     border-radius: 10px;
@@ -164,6 +159,11 @@ body {
 
 /* Pseudo-classes */
 
+#interactives-section *:not(:last-child) {
+    position: relative;
+    left: 2vw;
+}
+
 #interactives-section .btn:hover {
     color: var(--btn-hover-font-color);
     transform: scale(1.07);
@@ -202,4 +202,9 @@ body {
     0% { font-size: calc(var(--title-font-size) - 0.5rem); }
     60% { font-size: calc(var(--title-font-size) + 0.6rem);}
     100% { font-size: calc(var(--title-font-size) - 0.5rem); }
+}
+
+@keyframes error-message-ease {
+    from { opacity: 0%; }
+    to { opacity: 100%; }
 }

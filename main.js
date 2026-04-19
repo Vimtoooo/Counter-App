@@ -14,7 +14,7 @@ incrementButton.addEventListener('click', function () {
     if (currentStepValue > 0) {
         currentCountValue += currentStepValue;
         currentCountHTML.textContent = String(currentCountValue);
-        console.log("Incremented value by ".concat(currentCountValue));
+        console.log("Incremented value by ".concat(currentStepValue));
     }
     else {
         // Create a error message that pops up if the step value is less than one!
@@ -23,5 +23,18 @@ incrementButton.addEventListener('click', function () {
         console.log("The step of ".concat(currentStepValue, " is invalid!"));
     }
     ;
+});
+decrementButton.addEventListener('click', function () {
+    // Decrements based on the step value...
+});
+resetButton.addEventListener('click', function () {
+    currentCountValue = 0;
+    currentCountHTML.textContent = "0";
+    currentStepValue = 1;
+    currentStepHTML.textContent = "1";
+    // stepInput
+});
+stepButton.addEventListener('click', function () {
+    // Must validate on what the user has passes onto the step input box...
 });
 // Methods:
