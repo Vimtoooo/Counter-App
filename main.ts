@@ -37,7 +37,7 @@ resetButton.addEventListener('click', function() {
 
 stepButton.addEventListener('click', function() {
     // Must validate on what the user has passes onto the step input box...
-    
+    validateStep(stepInput, stepError);
 });
 
 // Methods:
@@ -45,7 +45,13 @@ function validateStep(stepInput: HTMLInputElement, stepError: HTMLElement): void
     stepInput.addEventListener('input', function() {
         const stepValue: number = this.valueAsNumber;
 
-        if (stepValue > 0) return true;
-        return false;
+        if (stepValue > 0) {
+            stepError.classList.remove("fade");
+            currentStepValue = stepValue;
+            currentStepHTML.textContent = String(stepValue);
+        } else {
+            stepError.classList.add("fade");
+        }
     });
 };
+

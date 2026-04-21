@@ -28,6 +28,13 @@ body {
     /* background-color: green; */
 }
 
+.fade {
+    animation: error-message-ease;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+
 /* ID Selectors */
 
 #text-section {
@@ -155,6 +162,7 @@ body {
 #interactives-section #step-error {
     grid-area: message;
     text-align: center;
+    opacity: 0;
 }
 
 /* Pseudo-classes */
