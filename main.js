@@ -29,20 +29,25 @@ resetButton.addEventListener('click', function () {
 });
 stepButton.addEventListener('click', function () {
     // Must validate on what the user has passes onto the step input box...
-    validateStep(stepInput, stepError);
+    var stepValue = stepInput.valueAsNumber;
+    var isShown = false;
+    if (stepValue > 0) {
+        stepError.classList.remove("fade-in");
+        currentStepValue = stepValue;
+        currentStepHTML.textContent = String(stepValue);
+        if (isShown) {
+            isShown = false;
+            stepError.classList.add("fade-away");
+            stepError.addEventListener('animationend', function handler() {
+                stepError.classList.remove("fade-away");
+                stepError.removeEventListener('animationend', handler);
+            });
+        }
+    }
+    else {
+        isShown = true;
+        stepError.classList.remove("fade-away");
+        stepError.classList.add("fade-in");
+    }
 });
 // Methods:
-function validateStep(stepInput, stepError) {
-    stepInput.addEventListener('input', function () {
-        var stepValue = this.valueAsNumber;
-        if (stepValue > 0) {
-            stepError.classList.remove("fade");
-            currentStepValue = stepValue;
-            currentStepHTML.textContent = String(stepValue);
-        }
-        else {
-            stepError.classList.add("fade");
-        }
-    });
-}
-;

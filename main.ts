@@ -37,21 +37,29 @@ resetButton.addEventListener('click', function() {
 
 stepButton.addEventListener('click', function() {
     // Must validate on what the user has passes onto the step input box...
-    validateStep(stepInput, stepError);
+    const stepValue: number = stepInput.valueAsNumber;
+    let isShown: boolean = false;
+
+    if (stepValue > 0) {
+        stepError.classList.remove("fade-in");
+        currentStepValue = stepValue;
+        currentStepHTML.textContent = String(stepValue);
+
+        if (isShown) {
+            isShown = false;
+            stepError.classList.add("fade-away");
+            stepError.addEventListener('animationend', function handler() {
+                stepError.classList.remove("fade-away");
+                stepError.removeEventListener('animationend', handler);
+            });
+        }
+
+    } else {
+        isShown = true;
+        stepError.classList.remove("fade-away");
+        stepError.classList.add("fade-in");
+    }
 });
 
 // Methods:
-function validateStep(stepInput: HTMLInputElement, stepError: HTMLElement): void {
-    stepInput.addEventListener('input', function() {
-        const stepValue: number = this.valueAsNumber;
-
-        if (stepValue > 0) {
-            stepError.classList.remove("fade");
-            currentStepValue = stepValue;
-            currentStepHTML.textContent = String(stepValue);
-        } else {
-            stepError.classList.add("fade");
-        }
-    });
-};
 
