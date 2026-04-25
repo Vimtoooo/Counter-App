@@ -8,9 +8,9 @@
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
     "module": "es2020",
-    "target": "esnext",
+    "target": "es2020",
     "types": [],
-    "lib": ["esnext", "dom"],
+    "lib": ["ES2020", "dom"],
     // "types": ["node"],
     // and npm install -D @types/node
 

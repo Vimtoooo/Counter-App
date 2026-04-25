@@ -14,6 +14,10 @@ const stepButton: HTMLElement = document.getElementById("step-btn") as HTMLEleme
 const stepInput: HTMLInputElement = document.getElementById("step-input") as HTMLInputElement;
 const stepError: HTMLElement = document.getElementById("step-error") as HTMLElement;
 
+// Constants:
+const DEFAULT_COUNT: number = 0;
+const DEFAULT_STEP: number = 1;
+
 // State to track if the error message is currently visible
 let isErrorShown: boolean = false;
 
@@ -32,15 +36,15 @@ decrementButton.addEventListener('click', function() {
 });
 
 resetButton.addEventListener('click', function() {
-    currentCountValue = 0;
-    currentCountHTML.textContent = "0";
-    currentStepValue = 1;
-    currentStepHTML.textContent = "1";
+    currentCountValue = DEFAULT_COUNT;
+    currentCountHTML.textContent = String(DEFAULT_COUNT);
+    currentStepValue = DEFAULT_STEP;
+    currentStepHTML.textContent = String(DEFAULT_STEP);
 });
 
 
 // Methods:
-function validateStepValue(isErrorShown: boolean): void {
+function applyStepAndValidate(): void {
     stepButton.addEventListener('click', function () {
         // Must validate on what the user has passes onto the step input box...
         const stepValue: number = stepInput.valueAsNumber;
@@ -63,4 +67,10 @@ function validateStepValue(isErrorShown: boolean): void {
     });
 };
 
-validateStepValue(isErrorShown);
+function syncDisplay(): void {
+    // Sync the count and step values correctly into the UI!
+    
+}
+
+// Function Calls:
+applyStepAndValidate();
