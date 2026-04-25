@@ -14,6 +14,9 @@ const stepButton: HTMLElement = document.getElementById("step-btn") as HTMLEleme
 const stepInput: HTMLInputElement = document.getElementById("step-input") as HTMLInputElement;
 const stepError: HTMLElement = document.getElementById("step-error") as HTMLElement;
 
+// State to track if the error message is currently visible
+let isErrorShown: boolean = false;
+
 // Event Listeners:
 incrementButton.addEventListener('click', function() {
     currentCountValue += currentStepValue;
@@ -35,31 +38,29 @@ resetButton.addEventListener('click', function() {
     currentStepHTML.textContent = "1";
 });
 
-stepButton.addEventListener('click', function() {
-    // Must validate on what the user has passes onto the step input box...
-    const stepValue: number = stepInput.valueAsNumber;
-    let isShown: boolean = false;
-
-    if (stepValue > 0) {
-        stepError.classList.remove("fade-in");
-        currentStepValue = stepValue;
-        currentStepHTML.textContent = String(stepValue);
-
-        if (isShown) {
-            isShown = false;
-            stepError.classList.add("fade-away");
-            stepError.addEventListener('animationend', function handler() {
-                stepError.classList.remove("fade-away");
-                stepError.removeEventListener('animationend', handler);
-            });
-        }
-
-    } else {
-        isShown = true;
-        stepError.classList.remove("fade-away");
-        stepError.classList.add("fade-in");
-    }
-});
 
 // Methods:
+function validateStepValue(isErrorShown: boolean): void {
+    stepButton.addEventListener('click', function () {
+        // Must validate on what the user has passes onto the step input box...
+        const stepValue: number = stepInput.valueAsNumber;
+    
+        if (stepValue > 0) {
+            currentStepValue = stepValue;
+            currentStepHTML.textContent = String(stepValue);
+    
+            if (isErrorShown) {
+                isErrorShown = false;
+                stepError.classList.remove("fade-in");
+                stepError.classList.add("fade-away");
+            }
+        } else if (!isErrorShown) {
+            // Only trigger fade-in if the error isn't already there
+            isErrorShown = true;
+            stepError.classList.remove("fade-away");
+            stepError.classList.add("fade-in");
+        }
+    });
+};
 
+validateStepValue(isErrorShown);

@@ -40,6 +40,7 @@ body {
     animation-fill-mode: forwards;
     animation-duration: 0.5s;
     animation-iteration-count: 1;
+    opacity: 1;
 }
 
 /* ID Selectors */
