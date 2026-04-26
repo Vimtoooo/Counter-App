@@ -1,3 +1,7 @@
+<div align="right">
+    <a href="#portuguese-section" title="Interact with this button to view README in portuguese">Português</a>
+</div>
+
 # Counter App
 
 A sleek, interactive counter application built with **TypeScript**, **HTML**, and **CSS**. This project demonstrates clean DOM manipulation, state management, and CSS animations.
@@ -19,7 +23,7 @@ A sleek, interactive counter application built with **TypeScript**, **HTML**, an
 
 ## Brief Demonstration
 
-![Brief Demonstration](assets/counterApp_preview.gif)
+![Brief Demonstration](counterApp_preview.gif)
 
 ## Getting Started
 
@@ -50,3 +54,62 @@ This project requires active compilation of TypeScript files.
 ## License
 
 This repository is assigned to the MIT license.
+
+---
+<details id="portuguese-section">
+ <summary>Ver versão em português (clique aqui para expandir)</summary>
+
+ <a name="versão em português"></a>
+
+ # Aplicativo Contador
+
+ Um aplicativo contador elegante e interativo desenvolvido com **TypeScript**, **HTML** e **CSS**. Este projeto demonstra manipulação de DOM de forma clara, gerenciamento de estado e animações CSS.
+ 
+ ## Recursos
+ 
+ - **Contagem Básica**: Incrementa e decrementa a contagem total.
+ - **Passos Personalizados**: Define um valor específico de “passo” para alterar o quanto o contador avança a cada clique.
+ - **Validação de entrada**: Impede valores inteiros não naturais para os passos.
+ - **Feedback visual**: Mensagens de erro com fade-in e fade-out suaves usando animações de keyframe em CSS.
+ - **Redefinição responsiva**: Limpa instantaneamente o estado, retornando aos valores padrão.
+ 
+ ## Pilha de tecnologias
+ 
+ - **Lógica**: TypeScript (compilado para ES2020)
+ - **Estilo**: CSS3 moderno com Grid e Flexbox
+ - **Runtime**: Node.js e npm
+ - **Desenvolvimento**: Compilador TypeScript (`tsc`)
+ 
+ ## Breve demonstração
+ 
+ ![Breve demonstração](counterApp_preview.gif)
+ 
+ ## Introdução
+ 
+ ### Pré-requisitos
+ Certifique-se de ter o Node.js instalado em sua máquina.
+ 
+ ### Instalação
+ 1. Clone o repositório ou baixe o código-fonte.
+ 2. Abra seu terminal no diretório do projeto.
+ 3. Instale as dependências de desenvolvimento:
+    ```bash
+    npm install
+    ```
+ 
+ ### Executando o aplicativo
+ Este projeto requer a compilação ativa de arquivos TypeScript.
+ 
+ 1. **Inicie o compilador**: Abra duas janelas de terminal e mantenha-as abertas simultaneamente. Agora, em uma das janelas de terminal, execute o seguinte comando para monitorar alterações e compilar automaticamente a pasta `dist/`:
+    ```bash
+    npm run watch
+    ```
+ 2. **Inicie o servidor**: Em uma segunda janela de terminal, inicie o servidor de desenvolvimento local:
+    ```bash
+    npm run start
+    ```
+ 3. Abra seu navegador na URL fornecida no terminal (geralmente `http://localhost:3000`).
+ 
+ ## Licença
+ 
+ Este repositório está sujeito à licença MIT.
