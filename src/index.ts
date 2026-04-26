@@ -37,6 +37,7 @@ resetButton.addEventListener('click', function() {
     count = DEFAULT_COUNT;
     step = DEFAULT_STEP;
     syncDisplay();
+    console.log("Reset activated");
 });
 
 stepButton.addEventListener('click', function () {
@@ -45,6 +46,7 @@ stepButton.addEventListener('click', function () {
     if (stepValue > 0) {
         step = stepValue;
         syncDisplay();
+        console.log(`Modified step value to ${stepValue}`);
         
         if (isErrorShown) {
             isErrorShown = false;
@@ -55,6 +57,7 @@ stepButton.addEventListener('click', function () {
         isErrorShown = true;
         stepError.classList.remove("fade-away");
         stepError.classList.add("fade-in");
+        console.log(`Invalid step value: ${stepValue}`);
     }
 });
 
