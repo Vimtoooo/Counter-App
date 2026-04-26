@@ -10,7 +10,7 @@
   },
   "keywords": [],
   "author": "Vimtoooo",
-  "license": "ISC",
+  "license": "MIT",
   "type": "module",
   "devDependencies": {
     "typescript": "^6.0.3"
