@@ -19,7 +19,7 @@ A sleek, interactive counter application built with **TypeScript**, **HTML**, an
 
 ## Brief Demonstration
 
-[Brief Demonstration](assets/counterApp_preview.gif)
+![Brief Demonstration](assets/counterApp_preview.gif)
 
 ## Getting Started
 
