@@ -1,5 +1,7 @@
 node_modules/
 dist/
 .DS_Store
+assets/
+.gif
 *.log
 npm-debug.log*
