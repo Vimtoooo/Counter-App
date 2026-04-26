@@ -34,21 +34,24 @@ Ensure you have Node.js installed on your machine.
 1. Clone the repository or download the source code.
 2. Open your terminal in the project directory.
 3. Install the development dependencies:
-   ```bash
-   npm install
-   ```
+
+```bash
+npm install
+```
 
 ### Running the App
 This project requires active compilation of TypeScript files.
 
 1. **Start the Compiler**: Open two terminal windows and keep them open simultaneously. Now with one terminal window, run the following command in a terminal to watch for changes and auto-build the `dist/` folder:
-   ```bash
-   npm run watch
-   ```
+
+```bash
+npm run watch
+```
 2. **Launch the Server**: In a second terminal window, start the local development server:
-   ```bash
-   npm run start
-   ```
+
+```bash
+npm run start
+```
 3. Open your browser to the URL provided in the terminal (usually `http://localhost:3000`).
 
 ## License
@@ -93,21 +96,24 @@ This repository is assigned to the MIT license.
  1. Clone o repositório ou baixe o código-fonte.
  2. Abra seu terminal no diretório do projeto.
  3. Instale as dependências de desenvolvimento:
-    ```bash
-    npm install
-    ```
+ 
+ ```bash
+ npm install
+ ```
  
  ### Executando o aplicativo
  Este projeto requer a compilação ativa de arquivos TypeScript.
  
  1. **Inicie o compilador**: Abra duas janelas de terminal e mantenha-as abertas simultaneamente. Agora, em uma das janelas de terminal, execute o seguinte comando para monitorar alterações e compilar automaticamente a pasta `dist/`:
-    ```bash
-    npm run watch
-    ```
+ 
+ ```bash
+ npm run watch
+ ```
  2. **Inicie o servidor**: Em uma segunda janela de terminal, inicie o servidor de desenvolvimento local:
-    ```bash
-    npm run start
-    ```
+ 
+ ```bash
+ npm run start
+ ```
  3. Abra seu navegador na URL fornecida no terminal (geralmente `http://localhost:3000`).
  
  ## Licença
